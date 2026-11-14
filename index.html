@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffd7e8" />
+  <meta name="description" content="A little pocket of birthday magic, made with love for my best friend." />
+  <title>A Little Birthday Surprise 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="site.config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <div class="twinkles" aria-hidden="true"><span>✧</span><span>✿</span><span>♡</span><span>✦</span><span>✿</span><span>✧</span></div>
+  <div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+  <header class="topbar" id="topbar" hidden>
+    <div class="brand"><span class="brand-icon">♥</span> made for you <span class="brand-spark">✳</span></div>
+    <div class="topbar-right"><span id="chapterLabel" class="chapter-label">chapter one</span><span class="topbar-heart" aria-hidden="true">♡</span></div>
+  </header>
+  <main id="screens">
+    <!-- 0 / Unlock -->
+    <section class="screen active unlock-screen" data-screen="0" aria-labelledby="unlockTitle">
+      <div class="unlock-left">
+        <div class="unlock-sticker sticker-star">✳</div><div class="unlock-sticker sticker-heart">♥</div>
+        <p class="tiny-overline">a tiny secret just for you ✧</p>
+        <div class="portrait-scallop"><div class="portrait-inner"><img class="avatar-img" alt="Birthday bestie portrait" hidden /><div class="avatar-art" aria-hidden="true"><svg viewBox="0 0 260 260" role="img" aria-label="Illustrated kitten holding a heart"><defs><linearGradient id="catbg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8eb"/><stop offset="1" stop-color="#fac4dc"/></linearGradient></defs><circle cx="130" cy="130" r="125" fill="url(#catbg)"/><path d="M45 80c15-30 35-37 49-24 31-20 53-12 75 5 23-11 39 2 48 24 22 53-14 111-84 116C62 202 22 145 45 80Z" fill="#fff8f5" stroke="#c68499" stroke-width="3"/><path d="M65 71 68 21l55 29M157 50l46-31 4 65" fill="#fff8f5" stroke="#c68499" stroke-width="4" stroke-linejoin="round"/><path d="m73 60 1-23 23 18M170 51l27-20-1 29" fill="#ffc9d7"/><path d="M80 122q10-14 20 0m50 0q10-14 20 0" fill="none" stroke="#9a7082" stroke-width="5" stroke-linecap="round"/><path d="m119 136 12 5 11-5-11 15z" fill="#e79caf"/><path d="M131 151q-8 13-18 1m18-1q9 13 18 1" fill="none" stroke="#b87c8e" stroke-width="3"/><ellipse cx="73" cy="148" rx="20" ry="10" fill="#fac7d8" opacity=".75"/><ellipse cx="187" cy="148" rx="20" ry="10" fill="#fac7d8" opacity=".75"/><path d="M88 189Q127 162 172 190l-8 30H100z" fill="#ef8eac"/><path d="M107 191c-9-10 0-23 10-18 6 3 12 8 13 12 9-18 30-8 23 8-5 10-21 24-23 25-4-4-16-15-23-27Z" fill="#e7517d"/><path d="M36 155h38m110 0h37" stroke="#b87c8e" stroke-width="3" stroke-linecap="round"/></svg></div></div></div>
+        <div class="portrait-tag">a little love note for <span data-name>bestie</span> ♡</div>
+        <div class="unlock-doodle" aria-hidden="true">✿ ˚ ༘ ♡ ⋆｡˚</div>
+      </div>
+      <div class="unlock-right gingham">
+        <span class="corner-ribbon">✿ FOR YOUR EYES ONLY</span>
+        <div class="pin-card" id="pinCard">
+          <div class="envelope-mark" aria-hidden="true">💌</div>
+          <p class="eyebrow">pssst... i made you something</p>
+          <h1 id="unlockTitle" class="hand-title">hey, bestie! <span>♡</span></h1>
+          <p class="pin-description">a tiny surprise is waiting for you. enter our secret code to open it!</p>
+          <div id="pinSlots" class="pin-slots" aria-label="Four digit PIN entered"><span></span><span></span><span></span><span></span></div>
+          <p id="pinStatus" class="pin-status" aria-live="polite">hint: try <strong>1234</strong> for this demo ♡</p>
+          <div class="number-pad" aria-label="Secret code keypad">
+            <button data-digit="1">1</button><button data-digit="2">2</button><button data-digit="3">3</button>
+            <button data-digit="4">4</button><button data-digit="5">5</button><button data-digit="6">6</button>
+            <button data-digit="7">7</button><button data-digit="8">8</button><button data-digit="9">9</button>
+            <button class="pad-icon" id="clearPin" aria-label="Clear code">↺</button><button data-digit="0">0</button><button class="pad-icon" id="deletePin" aria-label="Delete last digit">⌫</button>
+          </div>
+          <button id="unlockBtn" class="unlock-button" type="button">unlock my surprise <span>↗</span></button>
+        </div>
+        <span class="lower-doodle">made with all my heart ⋆ ˚｡⋆୨୧</span>
+      </div>
+    </section>
+
+    <!-- 1 / Opening -->
+    <section class="screen birthday-screen paper-grid" data-screen="1" aria-labelledby="birthdayTitle">
+      <div class="scrap scrapbook-top-left" aria-hidden="true"><span class="camera-sticker">📸</span><span class="note-star">✦</span></div>
+      <div class="scrap scrapbook-top-right" aria-hidden="true">♡ ✧ ♡</div>
+      <div class="hero-center">
+        <p class="eyebrow rose-text">today is your special day ✦</p>
+        <div class="rainbow" aria-hidden="true"><svg viewBox="0 0 220 110"><path d="M20 106a90 90 0 0 1 180 0" stroke="#f4a6af" stroke-width="16" fill="none"/><path d="M39 106a71 71 0 0 1 142 0" stroke="#f6c594" stroke-width="16" fill="none"/><path d="M58 106a52 52 0 0 1 104 0" stroke="#f6d995" stroke-width="16" fill="none"/><path d="M77 106a33 33 0 0 1 66 0" stroke="#abcda9" stroke-width="16" fill="none"/></svg></div>
+        <h2 id="birthdayTitle" class="hero-title"><span>happy birthday</span><em id="heroName">bestie!</em></h2>
+        <p id="ageLabel" class="age-label" hidden></p>
+        <p id="heroSubtitle" class="hero-subtitle">the world got a little brighter because you exist</p>
+        <div class="hand-underline" aria-hidden="true">〰 ♡ 〰</div>
+        <button class="pill-button big" data-next>let's begin our little journey <span>↗</span></button>
+      </div>
+      <div class="hero-margin-left" aria-hidden="true">✿<br/>✦<br/>♡</div>
+      <div class="hero-margin-right" aria-hidden="true">☆<br/>✿</div>
+      <div class="bottom-washi" aria-hidden="true"></div>
+    </section>
+
+    <!-- 2 / Letter -->
+    <section class="screen letter-screen paper-grid" data-screen="2" aria-labelledby="letterTitle">
+      <div class="section-heading"><span class="eyebrow">chapter 01 / a little note</span><h2 id="letterTitle" class="section-title">happy birthday <span>♡</span></h2></div>
+      <div class="two-col letter-layout">
+        <div class="portrait-group"><span class="float-flower" aria-hidden="true">✿</span><div class="letter-photo round-photo"><img class="avatar-img" alt="Best friend's portrait" hidden/><div class="avatar-art copy-avatar" aria-hidden="true"></div></div><div class="small-photo-label">dear <span data-name>bestie</span> ♡</div><div class="scribble">you + me = besties forever</div></div>
+        <article class="paper-letter"><span class="tape tape-top"></span><p class="letter-date">to my favorite human,</p><p id="birthdayLetter" class="letter-body"></p><p class="letter-signature">all my love, always <span>♥</span></p><span class="paper-flower" aria-hidden="true">✿</span></article>
+      </div>
+      <span class="side-heart" aria-hidden="true">♡</span>
+    </section>
+
+    <!-- 3 / Cake -->
+    <section class="screen cake-screen gingham" data-screen="3" aria-labelledby="cakeTitle">
+      <div class="cake-top-sticker" aria-hidden="true">✦ make some magic ✦</div>
+      <h2 id="cakeTitle" class="section-title cake-heading">make a wish <span>♡</span></h2>
+      <p class="cake-hint">close your eyes, make a wish, and tap each little candle ✨</p>
+      <div class="cake-scene" aria-label="Interactive birthday cake with five candles">
+        <div class="cake-spark a">✧</div><div class="cake-spark b">✦</div><div class="cake-spark c">♡</div>
+        <div class="cake-illustration">
+          <div class="candles" id="candles"><button class="candle" aria-label="Blow out candle 1"><span class="flame"></span><span class="wick"></span></button><button class="candle" aria-label="Blow out candle 2"><span class="flame"></span><span class="wick"></span></button><button class="candle" aria-label="Blow out candle 3"><span class="flame"></span><span class="wick"></span></button><button class="candle" aria-label="Blow out candle 4"><span class="flame"></span><span class="wick"></span></button><button class="candle" aria-label="Blow out candle 5"><span class="flame"></span><span class="wick"></span></button></div>
+          <div class="cake-tier cake-upper"><span class="icing-drip"></span><span class="tier-pattern">♡ ✧ ♡ ✧ ♡</span></div>
+          <div class="cake-tier cake-lower"><span class="icing-drip"></span><span class="tier-pattern">♡　 ♡　 ♡</span></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+      <p id="wishResult" class="wish-result" aria-live="polite">5 little wishes waiting to be made ♡</p>
+      <div class="cake-actions"><button id="relightBtn" class="text-button">↻ relight the candles</button><button class="pill-button" data-next>more surprises <span>↗</span></button></div>
+      <span class="cake-decor decor-l" aria-hidden="true">✿</span><span class="cake-decor decor-r" aria-hidden="true">♡</span>
+    </section>
+
+    <!-- 4 / Memories -->
+    <section class="screen memories-screen paper-grid" data-screen="4" aria-labelledby="memoriesTitle">
+      <div class="section-heading"><span class="eyebrow">chapter 02 / the good old days</span><h2 id="memoriesTitle" class="section-title">our little memories <span>✿</span></h2><p>every photo holds a story. tap one to peek inside ♡</p></div>
+      <div class="memory-gallery" id="memoryGallery"></div>
+      <span class="memory-doodle" aria-hidden="true">you + me<br/> forever ♡</span>
+    </section>
+
+    <!-- 5 / Wish -->
+    <section class="screen wish-screen paper-grid" data-screen="5" aria-labelledby="wishTitle">
+      <span class="floating-sticker wish-flower" aria-hidden="true">🌷</span><span class="floating-sticker wish-ribbon" aria-hidden="true">୨୧</span>
+      <article class="wish-paper"><span class="paper-tape"></span><p class="eyebrow">from my heart to yours</p><h2 id="wishTitle" class="section-title">my wish for you <span>♡</span></h2><div class="drawn-divider">✧ ───── ✿ ───── ✧</div><p id="myWish" class="wish-text"></p><div class="paper-footer">you deserve the whole world, bestie. <span>♥</span></div></article>
+      <span class="wish-corner-heart" aria-hidden="true">♡</span>
+    </section>
+
+    <!-- 6 / Flowers -->
+    <section class="screen flowers-screen gingham" data-screen="6" aria-labelledby="flowersTitle">
+      <p class="eyebrow rose-text">a tiny delivery, just for you</p>
+      <h2 id="flowersTitle" class="section-title flowers-title">flowers for you <span>✿</span></h2>
+      <div class="flower-art-wrap" id="bouquet" role="img" aria-label="An illustrated bouquet of pink flowers with ribbon">
+        <svg viewBox="0 0 420 420" class="bouquet-art" aria-hidden="true">
+          <defs><linearGradient id="wrapgrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffddce"/><stop offset="1" stop-color="#f4a8b9"/></linearGradient></defs>
+          <g stroke="#6d9970" stroke-width="7" stroke-linecap="round"><path d="M210 340 134 103"/><path d="M210 340 197 64"/><path d="M210 340 280 113"/><path d="M210 340 321 177"/><path d="M210 340 99 183"/><path d="M210 340 243 153"/></g>
+          <g fill="#9ec49d"><ellipse cx="156" cy="235" rx="19" ry="36" transform="rotate(-41 156 235)"/><ellipse cx="240" cy="224" rx="19" ry="38" transform="rotate(41 240 224)"/><ellipse cx="286" cy="241" rx="17" ry="32" transform="rotate(41 286 241)"/><ellipse cx="128" cy="253" rx="17" ry="32" transform="rotate(-50 128 253)"/></g>
+          <g class="bloom bloom1" transform="translate(133 104)"><g fill="#fff7e9" stroke="#e8aaba" stroke-width="2"><ellipse cy="-30" rx="21" ry="37"/><ellipse cy="30" rx="21" ry="37"/><ellipse cx="30" rx="37" ry="21"/><ellipse cx="-30" rx="37" ry="21"/><ellipse transform="rotate(45)" cy="-26" rx="19" ry="32"/><ellipse transform="rotate(-45)" cy="-26" rx="19" ry="32"/></g><circle r="22" fill="#ffd476"/><circle cx="-7" cy="-3" r="2.6" fill="#8d684c"/><circle cx="8" cy="-3" r="2.6" fill="#8d684c"/><path d="M-5 8q5 7 11 0" fill="none" stroke="#8d684c" stroke-width="2" stroke-linecap="round"/></g>
+          <g class="bloom bloom2" transform="translate(197 69)"><g fill="#ffc4d5" stroke="#e79ab1" stroke-width="2"><ellipse cy="-32" rx="24" ry="36"/><ellipse cy="32" rx="24" ry="36"/><ellipse cx="32" rx="36" ry="24"/><ellipse cx="-32" rx="36" ry="24"/><ellipse transform="rotate(45)" cy="-26" rx="20" ry="34"/><ellipse transform="rotate(-45)" cy="-26" rx="20" ry="34"/></g><circle r="22" fill="#ffe6a6"/><circle cx="-7" cy="-3" r="2.6" fill="#8d684c"/><circle cx="8" cy="-3" r="2.6" fill="#8d684c"/><path d="M-5 8q5 7 11 0" fill="none" stroke="#8d684c" stroke-width="2" stroke-linecap="round"/></g>
+          <g class="bloom bloom3" transform="translate(279 112)"><g fill="#fffaf1" stroke="#e8aaba" stroke-width="2"><ellipse cy="-30" rx="23" ry="35"/><ellipse cy="30" rx="23" ry="35"/><ellipse cx="30" rx="35" ry="23"/><ellipse cx="-30" rx="35" ry="23"/><ellipse transform="rotate(45)" cy="-26" rx="19" ry="32"/><ellipse transform="rotate(-45)" cy="-26" rx="19" ry="32"/></g><circle r="22" fill="#f7d680"/><circle cx="-7" cy="-3" r="2.6" fill="#8d684c"/><circle cx="8" cy="-3" r="2.6" fill="#8d684c"/><path d="M-5 8q5 7 11 0" fill="none" stroke="#8d684c" stroke-width="2" stroke-linecap="round"/></g>
+          <g class="bloom bloom4" transform="translate(321 177) scale(.73)"><g fill="#f9acc7" stroke="#dd8eae" stroke-width="2"><ellipse cy="-30" rx="23" ry="35"/><ellipse cy="30" rx="23" ry="35"/><ellipse cx="30" rx="35" ry="23"/><ellipse cx="-30" rx="35" ry="23"/></g><circle r="22" fill="#f6d880"/></g>
+          <g class="bloom bloom5" transform="translate(99 182) scale(.78)"><g fill="#fff4cc" stroke="#e4bc9a" stroke-width="2"><ellipse cy="-30" rx="23" ry="35"/><ellipse cy="30" rx="23" ry="35"/><ellipse cx="30" rx="35" ry="23"/><ellipse cx="-30" rx="35" ry="23"/></g><circle r="22" fill="#f4a8b9"/></g>
+          <path d="M75 224 195 389Q210 408 227 389L344 224Q274 271 211 272Q145 271 75 224Z" fill="url(#wrapgrad)" stroke="#dd95aa" stroke-width="3"/><path d="M75 224q135 83 269 0" fill="none" stroke="#fff4ed" stroke-width="7" stroke-dasharray="8 9"/><path d="M200 301q-48-36-66 7 19 35 66 17 13 20 25 0 51 18 63-17-23-39-63-7" fill="#f47fa6" stroke="#c96a90" stroke-width="3"/><circle cx="212" cy="314" r="18" fill="#e96996"/><path d="M203 333 182 382m40-49 29 50" fill="none" stroke="#db6c96" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+        <span class="bouquet-spark spark-one">✧</span><span class="bouquet-spark spark-two">✿</span><span class="bouquet-spark spark-three">♡</span>
+      </div>
+      <p class="flower-caption">if i could give you every flower in the world, i would.<br/>for now, here's a little bouquet full of love. ♡</p>
+      <button id="acceptFlowers" class="pill-button">accept your flowers <span>✿</span></button>
+      <p id="flowerResult" class="flower-result" aria-live="polite"></p>
+    </section>
+
+    <!-- 7 / Music -->
+    <section class="screen music-screen paper-grid" data-screen="7" aria-labelledby="musicTitle">
+      <div class="section-heading"><span class="eyebrow">chapter 03 / play this when you need a smile</span><h2 id="musicTitle" class="section-title">a little song for you <span>♫</span></h2></div>
+      <div class="music-layout two-col">
+        <div class="music-player"><div class="music-art"><div class="art-record" id="artRecord"><span>♡</span><b>bestie<br/>mix</b><small>side A</small></div><span class="art-star">✦</span><span class="art-heart">♡</span></div><div class="music-info"><div><strong id="songTitle"></strong><p id="songArtist"></p></div><span>♫</span></div><div class="music-progress"><span id="currentTime">0:00</span><input id="musicSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Song position"/><span id="duration">0:00</span></div><div class="player-controls"><button id="restartMusic" aria-label="Restart song" class="control-small">↶</button><button id="playMusic" aria-label="Play song" class="control-play">▶</button><button id="skipMusic" aria-label="Skip forward ten seconds" class="control-small">↷</button></div><div class="volume-row"><span>🔈</span><input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.75" aria-label="Volume"/><label class="upload-song">+ add your song<input type="file" id="songUpload" accept="audio/*" hidden/></label></div><audio id="birthdayAudio" preload="metadata"></audio></div>
+        <article class="song-letter"><span class="little-spark">✦</span><h3>this one makes me think of you...</h3><p id="songNote"></p><div class="song-quote">some friendships just feel like a favorite song. ♡</div><div class="song-doodle">♪　♫　♬</div></article>
+      </div>
+    </section>
+
+    <!-- 8 / Last Letter -->
+    <section class="screen final-letter-screen paper-grid" data-screen="8" aria-labelledby="lastTitle">
+      <span class="last-letter-bow" aria-hidden="true">୨୧</span><div class="last-letter-card"><span class="eyebrow">ps. before you go...</span><h2 id="lastTitle" class="section-title">one last message <span>♡</span></h2><p id="finalLetter" class="last-letter-body"></p><p class="last-letter-sign">your forever cheerleader, ♡</p></div><span class="last-letter-corner" aria-hidden="true">💌</span>
+    </section>
+
+    <!-- 9 / Ending -->
+    <section class="screen ending-screen gingham" data-screen="9" aria-labelledby="endingTitle">
+      <div class="ending-inner"><span class="end-star">✦　✧　✦</span><div class="ending-gift" id="endingGift" aria-hidden="true"><span class="gift-bow">୨୧</span><span class="gift-box">♥</span></div><p class="eyebrow">one tiny final wish...</p><h2 id="endingTitle">may all the good things<br/>you've been waiting for<br/><em>finally find you this year.</em></h2><p id="endingName" class="ending-name">happy birthday again, bestie! 🎂</p><button id="replayBtn" class="pill-button big">replay our little journey <span>↺</span></button><div class="ending-bottom">made with love, especially for you ♡</div></div>
+    </section>
+  </main>
+
+  <nav id="journeyNav" class="journey-nav" hidden aria-label="Journey navigation"><button id="prevBtn" aria-label="Go to previous chapter">←</button><span id="navCounter">01 / 09</span><div id="progressDots" class="progress-dots" aria-label="Journey progress"></div><button id="nextBtn" aria-label="Go to next chapter">→</button></nav>
+  <div id="memoryModal" class="memory-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-card"><button id="modalClose" class="modal-close" aria-label="Close photo">×</button><div id="modalArt" class="modal-art"></div><p id="modalTitle" class="modal-title"></p><p id="modalCaption" class="modal-caption"></p><div class="modal-toolbar"><button id="modalPrev">← previous</button><label class="photo-upload">+ add your photo<input type="file" id="photoUpload" accept="image/*" hidden/></label><button id="modalNext">next →</button></div></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+</body>
+</html>
